@@ -1,0 +1,12 @@
+---
+- name: copy gify-panda
+  copy: src=gify-panda dest=/tmp/ owner=root group=root mode=0755
+  notify:
+    - gify-panda restarted
+  
+- name: copy gify-panda upstart config file
+  copy: src=gify-panda.conf dest=/etc/init/ owner=root group=root mode=0644
+  notify: 
+    - reload-init
+    - gify-panda restarted
+

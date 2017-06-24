@@ -1,0 +1,13 @@
+---
+- name: copy counter-panda
+  copy: src=counter-panda.py dest=/tmp/counter-panda/ owner=root group=root mode=0755
+  notify:
+    - counter-panda restarted
+  
+- name: copy counter-panda upstart config file
+  copy: src=counter-panda.conf dest=/etc/init/ owner=root group=root mode=0644
+  notify: 
+    - reload-init
+    - counter-panda restarted
+    
+

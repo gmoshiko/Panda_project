@@ -12,3 +12,30 @@
   roles:
     - { role: nodejs, tags: nodejs }
     - { role: bamboo, tags: bamboo }
+    - { role: gify-panda, tags: gify-panda }
+    - { role: counter-panda, tags: counter-panda } 
+    
+  post_tasks:
+    - name: Checking if gify-panda is STARTED
+      service: 
+        name: gify-panda
+        state: started
+    
+    - name: Checking if Counter-Panda is STARTED
+      service: 
+        name: counter-panda
+        state: started
+    
+  handlers:
+    - name: reload-init
+      shell: sudo initctl reload-configuration
+        
+    - name: counter-panda restarted
+      service:
+        name: counter-panda
+        state: restarted
+
+    - name: gify-panda restarted
+      service:
+        name: gify-panda
+        state: restarted
