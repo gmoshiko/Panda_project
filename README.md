@@ -18,19 +18,18 @@ Both Service will be deployed to  the vagrant container at: /tmp/
 Both Service will have an upstart config file.
 
 ###### Gify-Panda
-Gify-Panda just serves 3 working/hello/stop pandas. you have a simple menu at <http://localhost:8090> 
+Gify-Panda just serves 3 working/hello/stop pandas. you have a simple menu at <http://localhost:8090> <br />
 You can upload new pandas and run 'ansible-playbook base.yml' and deploy your new PANDAS YEY! <br />
-*PORT*: you  can change port listening on " /roles/gify-panda/files/gify-panda/gify-panda.py ". just change PORT_NUMBER variable
-After Deploy you can start/stop/restart the service by running: 'sudo gify-panda start/stop/restart'.
+*PORT*: you  can change port listening on " /roles/gify-panda/files/gify-panda/gify-panda.py ". just change PORT_NUMBER variable <br />
+After Deploy you can start/stop/restart the service by running: 'sudo gify-panda start/stop/restart'. <br />
 For more help: '/tmp/gify-panda/gify-panda.py -h'
 
 ###### Counter-Panda
-Counter-Panda is a POST countering, it will respond to GET request the amount of POST request he counted. <http://localhost:8100> 
-You can update the code and deploy the service by running: 'ansible-playbook base.yml'.
-*PORT*: you  can change port listening on " /roles/counter-panda/files/counter-panda.py ". just change PORT_NUMBER variable
-After Deploy you can start/stop/restart the service by running: 'sudo counter-panda start/stop/restart'.
+Counter-Panda is a POST countering, it will respond to GET request the amount of POST request he counted. <http://localhost:8100> <br />
+You can update the code and deploy the service by running: 'ansible-playbook base.yml'. <br />
+*PORT*: you  can change port listening on " /roles/counter-panda/files/counter-panda.py ". just change PORT_NUMBER variable <br />
+After Deploy you can start/stop/restart the service by running: 'sudo counter-panda start/stop/restart'. <br />
 For more help: '/tmp/counter-panda/counter-panda.py -h'
-
 
 #### HOP YOU ENJOYED. 
 
