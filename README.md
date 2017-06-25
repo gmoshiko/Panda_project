@@ -31,6 +31,11 @@ You can update the code and deploy the service by running: 'ansible-playbook bas
 After Deploy you can start/stop/restart the service by running: 'sudo counter-panda start/stop/restart'. <br />
 For more help: '/tmp/counter-panda/counter-panda.py -h'
 
+##### jeno.sh 
+Jeno.sh is the bonus part. its simple bash scritp. you can deploy gify-panda or counter-panda and both if needed. <br />
+Usage: ./jeno.sh [TAG] <br />
+For more help: './jeon.sh -h' <br />
+
 #### HOP YOU ENJOYED. 
 
 ##### Email: gmoshiko@gmail.com
