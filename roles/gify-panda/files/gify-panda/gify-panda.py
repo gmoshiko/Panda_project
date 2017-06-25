@@ -7,7 +7,7 @@ import argparse
 
 # Help Menu
 parser=argparse.ArgumentParser(
-    description='''Example: sudo service gify-panda start ''',
+    description='''Example: sudo service gify-panda start | stop | restart ''',
     epilog="""Listening PORT: 8090.""")
 args=parser.parse_args()
 

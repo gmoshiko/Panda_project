@@ -7,7 +7,7 @@ import argparse
 
 # Help Menu
 parser=argparse.ArgumentParser(
-    description='''Example: sudo service counter-panda start ''',
+    description='''Example: sudo service counter-panda start | stop | restart  ''',
     epilog="""Listening PORT: 8100.""")
 args=parser.parse_args()
 
