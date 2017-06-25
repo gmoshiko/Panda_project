@@ -2,7 +2,7 @@
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import sys
-from os import curdir, sep
+from os import curdir, sep, path
 import argparse
 
 # Help Menu
@@ -29,22 +29,16 @@ class Handler(BaseHTTPRequestHandler):
         # Figuring out which type of file requested.
         try:
             BOOL = False
-            if self.path.endswith(".html"):
-                mimetype = 'text/html'
-                BOOL = True
-            if self.path.endswith(".jpg"):
-                mimetype = 'image/jpg'
-                BOOL = True
-            if self.path.endswith(".gif"):
-                mimetype = 'image/gif'
-                BOOL = True
-            if self.path.endswith(".js"):
-                mimetype = 'application/javascript'
-                BOOL = True
-            if self.path.endswith(".css"):
-                mimetype = 'text/css'
-                BOOL = True
-
+            extension = path.splitext(self.path)[-1]
+            mime_types = {
+                '.html': 'text/html',
+                '.jpg': 'image/jpg',
+                '.gif': 'image/gif',
+                '.js': 'application/javascript',
+                '.css': 'text/css',
+            }
+            mimetype = mime_types.get(extension)
+            BOOL = mimetype is not None
             if BOOL == True:
                 # Open static file on f and send it to the user.
                 # Adding the correct Content-Type.
